@@ -89,7 +89,8 @@ with open(csv_filename, 'a', newline='') as csvfile:
             question = chain.invoke({'context':context})
             context = context.split("\n")
             context = " ".join(context)
-            input = fr"###Human:\n{question}\n\n###Assistant:\n{context}"
+            # input = fr"###Human:\n{question}\n\n###Assistant:\n{context}"
+            input = fr"<s> [INST] {question} [/INST] {context} </s>"
             # print("Context = ",context)
             # print("Question = ", question)
             writer.writerow([f"{context}", question, input])
