@@ -81,7 +81,7 @@ if not os.path.isfile(csv_filename):
 
 with open(csv_filename, 'a', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    i = 1817
+    i = 0
     for context in total_splits[i:]:
         try:
             print(i)
